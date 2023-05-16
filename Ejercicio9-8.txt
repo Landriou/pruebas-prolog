@@ -1,0 +1,14 @@
+	El significado semantico es diferente en ambos casos debido a que el predicado is/2 resulta verdadero en caso
+de que la evaluacion de una expresion sea igual a un numero, el predicado es de la forma "num is expresion",
+es decir, dicho predicado sera verdadero cuando el resultado o la evaluacion de una determinada expresion
+es igual al numero a la izquierda. La palabra clave es evaluacion, ya que si de una expresion resulta
+un valor flotante 15.0, este no unificara con el numero entero 15, un claro ejemplo de esto se presenta en la documentacion de prolog:
+1 is sin(pi/2) fallará, porque sin(pi/2) = 1.0 mientras que 1 es un entero.
+
+	En contraparte, el predicado "=" evalua la igualdad de los valores de dos expresiones, es decir, 1 = 1.0 unificara
+debido a que el valor resultante de ambas expresiones resulta 1 y por tanto se consideran iguales.
+
+	A pesar de tener significados semanticos distintos, hay casos en los que se pueden llegar a comportar de la misma manera
+unificando para los mismos valores, esto se dará para aquellas expresiones que sean exactamente iguales, y no puedan diferenciarse
+de ninguna manera que el predicado "is" considere. Un claro ejemplo de esto es "1=1" y "1 is 1", en ambos casos prolog unificara
+debido a que ambas expresiones son completamente equivalentes en todo sentido, tanto en tipo como en valor.
